@@ -1,0 +1,105 @@
+<!--pages/home/home.wxml-->
+<scroll-view scroll-x style="width: 100%" class="table">
+    <block>
+        <view class="tr_search" >
+          <view class="td_input" >
+              <input  class="searchinput" bindinput="userNameInput" maxlength="10" placeholder="请输入姓名"/>
+          </view>
+          <view class="td_search">
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_search">搜索</button> 
+          </view>
+        </view>
+              
+    </block>
+    <block>
+        <view class="tr gray" >
+
+            <view class="td_mainbtn">
+
+              <button  class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_add">添加</button> 
+             
+            </view>
+            <view class="td_mainbtn">
+
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_home">主页</button> 
+             
+            </view>
+            <view class="td_mainbtn">
+
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_update">修改</button> 
+             
+            </view>
+        </view>
+    </block>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="widget">
+        <view class="widgets__item">
+            <label class="widgets__info-name">姓名</label>
+            <input name="username" class="widgets__info-value" placeholder="请输入姓名" value='{{username}}'/>
+        </view>
+        <view class="widgets__item">
+          <view class="widgets__info-name">性别</view>
+          <radio-group name="sex" value="{{sex}}">
+            <label><radio checked='{{malecheck}}' value="male"/>男</label>
+            <label><radio checked='{{femalecheck}}' value="female"/>女</label>
+          </radio-group>
+        </view>
+        <view class="widgets__item">
+          <view class="widgets__info-name">生日</view>
+          <picker mode="date" name="birthday" value="{{birthday}}" start="1901-01-01" end="2030-12-31"              bindchange="bindDateChange">
+            <view class="picker">当前选择: {{birthday}}</view>
+          </picker>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">是否在世</label>
+            <switch wx:if="{{status == 1}}" checked bindchange="alivecheck"/>
+            <switch wx:if="{{status == 0}}" bindchange="alivecheck"/>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">诞辰</label>
+          <picker mode="date" name="deathday" value="{{deathday}}" start="1901-01-01" end="2030-12-31" bindchange="deathdayChange">
+              <view class="picker">当前选择: {{deathday}}</view>
+          </picker>
+        </view>
+         <view class="widgets__item">
+            <label class="widgets__info-name">工作类型</label>
+            <picker bindchange="workChange" name="work" value="{{workstring}}" range="{{worklist}}">
+              <view class="picker">
+                当前选择：{{workstring}}
+              </view>
+            </picker>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">手机号码</label>
+            <input name="mobile" class="widgets__info-value" placeholder="请输入手机号" value='{{mobile}}'/>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">居住地</label>
+            <input name="home" class="widgets__info-value" placeholder="请输入居住地" value='{{home}}'/>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">父亲</label>
+            <input name="father" class="widgets__info-value" placeholder="请输入父亲姓名" value='{{father}}'/>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">母亲</label>
+            <input name="mother" class="widgets__info-value" placeholder="请输入母亲姓名" value='{{mother}}'/>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">子女</label>
+            <input name="children" class="widgets__info-value" placeholder="请输入子女姓名，多个子女以空格隔开" value='{{children}}'/>
+        </view>
+        <view class="widgets__item">
+            <label class="widgets__info-name">辈分</label>
+            <picker bindchange="bindPickerChange" name="level" value="{{levelNumber}}" range="{{array}}">
+              <view class="picker">
+                当前选择：{{levelstring}}
+              </view>
+            </picker>
+        </view>
+        <view class="btn-area">
+          <button formType="submit" class="subbtn">提交</button>
+        </view>
+      </view>
+    </form> 
+</scroll-view>

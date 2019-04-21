@@ -1,0 +1,45 @@
+<!--pages/home/home.wxml-->
+<scroll-view scroll-x style="width: 100%" class="table">
+    <block>
+        <view class="tr_search" >
+          <view class="td_input" >
+              <input  class="searchinput" bindinput="userNameInput" name="searchinput" maxlength="10" placeholder="请输入姓名"/>
+          </view>
+          <view class="td_search">
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_search">搜索</button> 
+          </view>
+        </view>
+              
+    </block>
+    <block>
+        <view class="tr gray" >
+
+            <view class="td_mainbtn">
+
+              <button  class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_add">添加</button> 
+             
+            </view>
+            <view class="td_mainbtn">
+
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_home">首页</button> 
+             
+            </view>
+            <view class="td_mainbtn">
+
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_update">修改</button> 
+             
+            </view>
+        </view>
+    </block>
+    <block >
+        <view class="tr" wx:for="{{tables}}" wx:for-item="table" wx:for-index="table_index" >
+            <navigator open-type="redirect" url="../detail/detail?memberIndex={{table.id}}" hover-class="navigator-hover" class="widget">
+              <text class="widget__name">{{table.username}}</text>
+              <image class="widget__arrow" src="resources/arrow.png" background-size="cover" />
+              <view class="widget__line"></view>
+            </navigator>
+        </view>
+    </block>
+    
+    
+</scroll-view>

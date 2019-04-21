@@ -1,0 +1,130 @@
+/* pages/detail/detail.wxss *//* pages/update/update.wxss */
+/* pages/add/add.wxss *//* pages/home/home.wxss */
+.index{
+    background-color: #FBF9FE;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    flex: 1;
+    min-height: 100%;
+    font-size: 13px;
+}
+.widget{
+    position: relative;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.widgets__item{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    flex-direction: row;
+    background-color: #ffffff;
+    
+}
+.widgets__info{
+    border-bottom: 1px solid #AAAAAA;
+}
+.widgets__info_show{
+    opacity: .4;
+}
+.widgets__info-name{
+    flex: 1;
+}
+.widgets__info-value{
+    color:#AAAAAA;
+    
+}
+.table {
+    border: 0px solid darkgray;
+    font-size: 12px;
+}
+
+.tr {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.td {
+    width: 50%;
+    height: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    flex-shrink: 0;
+    line-height: 1.5rem
+}
+.tr_search{
+   display: flex;
+    width: 100%;
+    align-items: center;
+    height:2.5rem;
+    background-color:#444444;
+}
+.td_input{
+    width: 77%;
+    height: 1.8rem;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    flex-shrink: 0;
+    line-height: 1.8rem;
+    padding-left: 3%;
+
+}
+.td_search{
+    width: 20%;
+    height: 2rem;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    flex-shrink: 0;
+    line-height: 2rem;
+
+}
+.td_mainbtn{
+    width: 33%;
+    height: 2rem;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    flex-shrink: 0;
+    line-height: 2rem;
+
+}
+
+.gray{
+    background:#444444;
+}
+.searchbtn{
+    
+    height:1.8rem;
+    width:100%;
+    float:left;
+    
+}
+.searchinput{
+    width: 100%;
+    height:1.8rem;
+    vertical-align: middle;
+    font-size: 16px;
+    
+    background-color: white;
+}
+button[class="searchbtn"]::after {
+  border: 0;
+  
+}
+.subbtn{
+  background-color:#444444;
+  color:white;
+}
+.resbtn{
+  background-color:#444444;
+  color:white;
+}
+.section{
+  height:25px
+}

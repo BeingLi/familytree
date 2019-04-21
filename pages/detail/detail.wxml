@@ -1,0 +1,108 @@
+<!--pages/home/home.wxml-->
+
+<scroll-view scroll-x style="width: 100%" class="table">
+    <block>
+        <view class="tr_search" >
+          <view class="td_input" >
+              <input  class="searchinput" bindinput="userNameInput" maxlength="10" placeholder="请输入姓名"/>
+          </view>
+          <view class="td_search">
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_search">搜索</button> 
+          </view>
+        </view>
+              
+    </block>
+    <block>
+        <view class="tr gray" >
+
+            <view class="td_mainbtn">
+
+              <button  class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_add">添加</button> 
+             
+            </view>
+            <view class="td_mainbtn">
+
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_home">主页</button> 
+             
+            </view>
+            <view class="td_mainbtn">
+
+              <button class="searchbtn" style="font-size:15px;color:white;background-color:#444444;" type="default" bindtap="btn_update">修改</button> 
+             
+            </view>
+        </view>
+    </block>
+    
+    <block>
+      <view class="widget">
+     
+          <view class="widgets__item">
+          <label name="childern" class="widgets__info-name">姓名</label>
+          <label name="childern" class="widgets__info-value">{{username}}</label>
+          </view>
+        <view class="widgets__item">
+       
+          <label name="childern" class="widgets__info-name">生日</label>
+          <label name="childern" class="widgets__info-value">{{birthday}}</label>
+          
+          
+        </view>
+        <view class="widgets__item" wx:if="{{status == 0}}">
+          
+          <label name="childern" class="widgets__info-name">诞辰</label>
+          <label name="childern" class="widgets__info-value">{{deathday}}</label>
+     
+        </view>
+        <view class="widgets__item">
+  
+          <label name="childern" class="widgets__info-name">性别</label>
+          <label name="childern" class="widgets__info-value">{{sex}}</label>
+
+        </view>
+
+        <view class="widgets__item">
+
+          <label name="childern" class="widgets__info-name">工作类型</label>
+          <label name="childern" class="widgets__info-value">{{work}}</label>
+       
+        </view>
+        <view class="widgets__item">
+   
+          <label name="childern" class="widgets__info-name">手机号码</label>
+          <label name="childern" class="widgets__info-value">{{mobile}}</label>
+   
+        </view>
+        <view class="widgets__item">
+
+          <label name="childern" class="widgets__info-name">居住地</label>
+          <label name="childern" class="widgets__info-value">{{home}}</label>
+
+        </view>
+        <view class="widgets__item">
+
+          <label name="childern" class="widgets__info-name">父亲</label>
+          <label name="childern" class="widgets__info-value">{{father}}</label>
+    
+        </view>
+        <view class="widgets__item">
+
+          <label name="childern" class="widgets__info-name">母亲</label>
+          <label name="childern" class="widgets__info-value">{{mother}}</label>
+
+        </view>
+        <view class="widgets__item">
+
+          <label name="childern" class="widgets__info-name">子女</label>
+          <label name="childern" class="widgets__info-value">{{children}}</label>
+
+        </view>
+        <view class="widgets__item">
+
+          <label name="childern" class="widgets__info-name">辈分</label>
+          <label name="childern" class="widgets__info-value">第{{level}}辈</label>
+
+        </view>
+      </view>
+    </block>
+ </scroll-view>
+
